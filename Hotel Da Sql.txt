@@ -1,0 +1,14 @@
+with Hotelss as(
+select * from dbo.['2018$']
+union
+select * from dbo.['2019$']
+union
+select * from dbo.['2020$']
+)
+
+select * from Hotelss h
+Left Join dbo.market_segment$ d
+on h.market_segment = d.market_segment
+Left Join dbo.meal_cost$ c
+on h.meal = c.meal
+
